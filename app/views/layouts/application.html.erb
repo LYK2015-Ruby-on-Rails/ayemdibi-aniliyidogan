@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ayemdibi</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>  <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+
+
+    <nav   style="padding-right: 25px;">
+      <div class="nav-wrapper">
+
+        <ul class="right hide-on-med-and-down">
+          <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"waves-effect waves-light btn" %>
+          <% else  %>
+          <%= link_to 'Sign in', new_user_session_path, class:"waves-effect waves-light btn" %>
+          <% end %>
+
+        </ul>
+      </div>
+    </nav>
+
+
+
+<%= yield %>
+<footer class="page-footer">
+<div class="footer-copyright">
+           <div class="container">
+           © 2015 CopyLeft
+           <a class="grey-text text-lighten-4 right" href="http://rubyonrails.org/">Ruby on Rails</a>
+           </div>
+         </div>
+       </footer>
+</body>
+</html>

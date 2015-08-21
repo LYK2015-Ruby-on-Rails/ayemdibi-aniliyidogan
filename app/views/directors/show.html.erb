@@ -1,0 +1,15 @@
+<h3><%= @director.name %></h3><br>
+
+<h4>Director</h4>
+<% @movies.each do |movie|  %>
+  <%= movie.name %>
+<% end %><br>
+
+<h4>Actor</h4>
+
+<% @actor_movies.each do |actor| %>
+
+<% actor.movies.each do |movie|  %>
+ <%= movie.name %>
+<% end %>
+<% end %>
