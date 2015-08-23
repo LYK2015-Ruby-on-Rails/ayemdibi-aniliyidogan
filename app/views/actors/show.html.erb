@@ -1,15 +1,39 @@
+<div class="row">
+  <div class="col s4 m4 l4">
+
 <h3><%= @actor.name %></h3><br>
-
+<h5><%= @actor.bio %></h5><br>
+</div>
+<div class="col s4 m4 l4">
 <h4>Actor</h4>
+
+<div class="jumbotron" style="height: auto;">
 <% @movies.each do |movie|  %>
-  <%= movie.name %>
-<% end %><br>
+<div class="z-depth-1">
+  <h3 style="background-color: #fff; color: #006064;">
+    <center>
+      <%= movie.name %>
+    </center>
+  </h3>
+</div>
 
-<h4>Director</h4>
+<% end %></div></div>
+<div class="col s4 m4 l4">
+<h4>Director</h4><br>
 
+<div class="jumbotron" style="height: auto;">
 <% @directed_movies.each do |director| %>
 
 <% director.movies.each do |movie|  %>
+<div class="z-depth-1">
+  <h3 style="background-color: #fff; color: #006064;">
+    <center>
  <%= movie.name %>
+ </center>
+   </h3>
+ </div>
+
 <% end %>
 <% end %>
+</div>
+</div></div>

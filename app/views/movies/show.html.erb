@@ -1,70 +1,69 @@
 <div class="row">
   <div class="parallax-container">
-      <div class="parallax"><%= image_tag(@movie.full_image) %></div>
-    </div>
-  <div class="col s4 m4 l4">
-  <div class="jumbotron" style="height: auto;">
+    <div class="parallax"><%= image_tag(@movie.full_image) %></div>
+  </div>
+  <div class="z-depth-1">
+    <h3>
+      <center>
+        <%= @movie.name %>
+      </center>
+    </h3>
+  </div>
 
-        <div class="z-depth-1">
-          <h3 style="background-color: #fff; color: #006064;">
-            <center>
-              <%= @movie.name %>
-            </center>
-          </h3>
-        </div>
+  <center>
+    <%= rating_for @movie, "movie", :star => 10 %>
+  </center>
 
+    <div class="jumbotron" style="height: auto;">
+      <div class="z-depth-1">
+        <h3>
           <center>
-            <%= image_tag(@movie.image, height:"400") %><br>
-            <%= rating_for @movie, "movie", :star => 10 %>
-            <%= rating_for @movie, "movie", disable_after_rate: true, imdb_avg: true %>
+            Story
           </center>
+        </h3>
       </div>
-</div>
+    <div class="text">
+      <center>
+        <%= @movie.story %>
+      </center>
+    </div></div>
 
-  <div class="col s4 m4 l4">
+    <div class="jumbotron" style="height: auto;">
+      <div class="z-depth-1">
+        <h3>
+          <center>
+            Actors
+          </center>
+        </h3>
+      </div><center>
+      <% @actors.each do |actor| %>
+      <a>&nbsp;<%= link_to actor.name, actor_path(actor) %></a>&nbsp;
+      <% end %>
+    </center></div>
+    <div class="jumbotron" style="height: auto;">
+      <div class="z-depth-1">
+        <h3>
+          <center>
+            Director(s)
+          </center>
+        </h3>
+      </div><center>
+
+      <% @directors.each do |director| %>
+          <a>&nbsp;<%= link_to director.name, director_path(director) %>&nbsp;</a>
+        <% end %></center></div>
 
       <div class="jumbotron" style="height: auto;">
         <div class="z-depth-1">
-          <h3 style="background-color: #fff; color: #006064;">
-            <center>
-              Actors
-            </center>
-          </h4>
-        </div>
-        <% @actors.each do |actor| %>
-        <h4 style="color: #006064;">
+        <h3>
           <center>
-            <%= link_to actor.name, actor_path(actor) %>
-          </center>
-        </h4>
-        <% end %>
-        <div class="z-depth-1">
-          <h4 style="background-color: #fff; color: #006064;">
-            <center>
-              Directors
-            </center>
-          </h3>
-        </div>
-        <% @directors.each do |director| %>
-        <h5 style="color: #006064;">
-          <center>
-            <%= link_to director.name, director_path(director) %>
-          </center>
-        </h5>
-        <% end %>
-        <div class="z-depth-1">
-          <h5 style="background-color: #fff; color: #006064;">
-            <center>
             Categories
-            </center>
-          </h5>
-        </div>
-        <% @categories.each do |category| %>
-        <center><h5  style="color: #006064;">
-        <%= link_to category.name, category_path(category) %>
-      </h5>
-      </center>
-        <% end %>
-      </div>
-  </div>
+          </center>
+        </h3>
+      </div><center>
+      <% @categories.each do |category| %>
+          <a>&nbsp;<%= link_to category.name, category_path(category) %>&nbsp;</a>
+      <% end %></center>
+    </div>
 </div>
+<!-- (@movie.average("movie").avg) -->
