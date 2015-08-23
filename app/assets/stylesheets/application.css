@@ -14,23 +14,37 @@
  *= require_self
  */
  body{
-
    font-family: 'Homenaje', sans-serif !important;
    background-color: #fff;
    padding-left: 140px;
    padding-right: 140px;
-   }
+}
 
-   .parallax-container {
+  a{
+     color:  #00838f;
+     font-size: 20px;
+
+}
+
+  .text{
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+}
+
+  h3{
+      background-color: #fff;
+      color: #006064;
+}
+
+  .parallax-container {
          height: 300px;
          width: 100%;
-       }
+}
 
- .jumbotron{
-
+  .jumbotron{
    height: 600px;
    margin: 10px;
-
    background-color: #e0f7fa;
    border-radius: 10px;
  }
