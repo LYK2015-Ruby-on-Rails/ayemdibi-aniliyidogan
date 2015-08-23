@@ -1,0 +1,12 @@
+<div class="row">
+<h2>All Directors</h2>
+<% @directors.each do |director|  %>
+<div class="col s12 m12 l3">
+  <div class="z-depth-1">
+    <center>
+    <h3><%= link_to director.name, director_path(director) %></h3>
+  </center>
+  </div>
+</div>
+<% end %>
+</div>
