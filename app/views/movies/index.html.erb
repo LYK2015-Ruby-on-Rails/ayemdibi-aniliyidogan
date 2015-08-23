@@ -1,70 +1,50 @@
 <div class="row">
-
   <% @movies.each do |movie|  %>
-
   <div class="col s12 m12 l3">
-    <div class="z-depth-1" style="background-color: #e0f7fa;">
-      <div class="jumbotron">
-
-        <div class="z-depth-1">
-          <b>
-            <center>
-              <%= link_to movie.name, movie_path(movie) %>
-            </center>
-          </b>
-        </div>
-
-        <div class="z-depth-1">
+    <div class="jumbotron">
+      <div class="z-depth-1">
+        <b>
           <center>
-            <%= image_tag(movie.image.url, height: "310px",class:"materialboxed") %>
+            <%= link_to movie.name, movie_path(movie) %>
           </center>
-        </div>
-
-<!-- <div class="z-depth-1"><b><center>Actors</b></div><br> -->
-
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header active">
-              <center>
-                Actors
-              </center>
-            </div>
-
-            <div class="collapsible-body">
-              <p>
-                <% movie.actors.each do |actor| %>
-                <%= actor.name %>&nbsp;
-                <% end %>
-              </p>
-            </div>
-          </li>
-
-<!-- <% movie.actors.each do |actor| %>
-          <%= actor.name %>, -->
-<!-- <% end %><br> -->
-
-          <li>
-            <div class="collapsible-header active">
-              <center>
-                Directors
-              </center>
-            </div>
-
-            <div class="collapsible-body">
-              <p>
-                <% movie.directors.each do |director| %>
-                <%= director.name %>
-                <% end %>
-                <br>
-              </p>
-            </div>
-          </li>
-<!-- <div class="z-depth-1"><b><center>Director</b></div><br>
-  <% movie.directors.each do |director| %>
-  <%= director.name %>,
-  <% end %><br> -->
-        </ul>
+        </b>
       </div>
+      <div class="z-depth-1">
+        <center>
+          <%= image_tag(movie.image.url, height: "310px",class:"materialboxed") %>
+        </center>
+      </div>
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header active">
+            <center>
+              Actors
+            </center>
+          </div>
+          <div class="collapsible-body">
+            <p>
+              <% movie.actors.each do |actor| %>
+              <%= actor.name %>&nbsp;
+              <% end %>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header active">
+            <center>
+              Directors
+            </center>
+          </div>
+          <div class="collapsible-body">
+            <p>
+              <% movie.directors.each do |director| %>
+              <%= director.name %>
+              <% end %>
+              <br>
+            </p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
   <% end %>
